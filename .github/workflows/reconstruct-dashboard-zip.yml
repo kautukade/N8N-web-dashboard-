@@ -29,7 +29,10 @@ jobs:
         run: |
           set -euo pipefail
           test -f .github/upload-parts/part-11.b64
+          wc -c .github/upload-parts/part-*.b64
+          sha256sum .github/upload-parts/part-*.b64
           cat .github/upload-parts/part-*.b64 | base64 --decode > business-dashboard-production-ready.zip
+          sha256sum business-dashboard-production-ready.zip
           echo "06b3b845911fc8cba711299bafd0ab4f074054020b443bd7fa909f28d6afeb48  business-dashboard-production-ready.zip" | sha256sum -c -
           unzip -t business-dashboard-production-ready.zip
 
