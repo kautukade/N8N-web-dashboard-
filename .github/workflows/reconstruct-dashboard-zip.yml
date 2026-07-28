@@ -24,6 +24,25 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Commit archive part diagnostics
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            echo "Archive part sizes"
+            wc -c .github/upload-parts/part-*.b64
+            echo
+            echo "Archive part SHA-256"
+            sha256sum .github/upload-parts/part-*.b64
+          } > archive-part-diagnostics.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive-part-diagnostics.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "Add archive part diagnostics"
+            git push origin HEAD:main
+          fi
+
       - name: Reconstruct and validate ZIP
         shell: bash
         run: |
@@ -37,8 +56,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add business-dashboard-production-ready.zip business-dashboard-production-ready.zip.sha256
           git diff --cached --quiet && exit 0
           git commit -m "Add production dashboard ZIP"
