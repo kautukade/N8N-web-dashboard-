@@ -1,1 +1,1 @@
-Trigger production dashboard ZIP integrity validation.
+Trigger production dashboard archive part diagnostics.
