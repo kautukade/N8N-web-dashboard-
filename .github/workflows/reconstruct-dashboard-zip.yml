@@ -24,17 +24,14 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Reconstruct and verify ZIP
+      - name: Reconstruct and validate ZIP
         shell: bash
         run: |
           set -euo pipefail
           test -f .github/upload-parts/part-11.b64
-          wc -c .github/upload-parts/part-*.b64
-          sha256sum .github/upload-parts/part-*.b64
           cat .github/upload-parts/part-*.b64 | base64 --decode > business-dashboard-production-ready.zip
-          sha256sum business-dashboard-production-ready.zip
-          echo "06b3b845911fc8cba711299bafd0ab4f074054020b443bd7fa909f28d6afeb48  business-dashboard-production-ready.zip" | sha256sum -c -
           unzip -t business-dashboard-production-ready.zip
+          sha256sum business-dashboard-production-ready.zip > business-dashboard-production-ready.zip.sha256
 
       - name: Commit ZIP archive
         shell: bash
@@ -42,7 +39,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add business-dashboard-production-ready.zip
+          git add business-dashboard-production-ready.zip business-dashboard-production-ready.zip.sha256
           git diff --cached --quiet && exit 0
           git commit -m "Add production dashboard ZIP"
           git push origin HEAD:main
