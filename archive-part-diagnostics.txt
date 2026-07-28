@@ -1,0 +1,28 @@
+Archive part sizes
+ 12000 .github/upload-parts/part-00.b64
+ 12000 .github/upload-parts/part-01.b64
+ 12000 .github/upload-parts/part-02.b64
+ 12000 .github/upload-parts/part-03.b64
+ 12000 .github/upload-parts/part-04.b64
+ 12000 .github/upload-parts/part-05.b64
+ 12000 .github/upload-parts/part-06.b64
+ 12000 .github/upload-parts/part-07.b64
+ 11992 .github/upload-parts/part-08.b64
+ 12000 .github/upload-parts/part-09.b64
+  9984 .github/upload-parts/part-10.b64
+  4820 .github/upload-parts/part-11.b64
+134796 total
+
+Archive part SHA-256
+6991ad2832a9ae87472f40b32de7e038032bc9ffb2b26b5621876d7dbd22847c  .github/upload-parts/part-00.b64
+d5dfb7914136b4c475b8bd8c40a5a918161c69c502861816868a1a0333b8ec17  .github/upload-parts/part-01.b64
+50223ad0dcb11571195c858a835adebfdf5c02886044408842970f53aec8d7d0  .github/upload-parts/part-02.b64
+0d2e6e7eecc5bdadada79302472dd056c889cc333d0d86bbd632b27200f1b9f2  .github/upload-parts/part-03.b64
+4c29872b669c4b59ffb3d8d9ba23532193a077569aae123a9df31fac76b43ef9  .github/upload-parts/part-04.b64
+3bd6d6e3b5f0bace6715b8b90f4ffdf5404f03b3ff4240701edbe88e6a4833e5  .github/upload-parts/part-05.b64
+2dd8b9cdc7361aa0ab9b79171c2e1377e3fd65e8ddf213ffad5d87ae8461868f  .github/upload-parts/part-06.b64
+a9aab73d7f8119605786166eae86f48c8f9e5d3045ea79c36c4807ffb406c865  .github/upload-parts/part-07.b64
+fc02808ea3e0f84a8a571f3626497cf7f9ea2a97df47103644435bc53ca34b61  .github/upload-parts/part-08.b64
+2e991992fbd8befe5fad171029c0bc2088261a69d6056a2fa189b9660cb37c24  .github/upload-parts/part-09.b64
+4c1aa16ea3b90f9be2b73f2407e23af2db6e36de249c933b34e545c5c4963bbe  .github/upload-parts/part-10.b64
+0e05043e566422b376e3c044012e2c95edf25845151b850f25b907685202cead  .github/upload-parts/part-11.b64
