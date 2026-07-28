@@ -1,1 +1,1 @@
-Trigger production dashboard ZIP reconstruction.
+Trigger production dashboard ZIP reconstruction diagnostics.
